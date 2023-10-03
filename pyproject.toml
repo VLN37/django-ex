@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "django-x"
+name = "django-ex"
 version = "0.0.1"
 authors = [
     { name="João Felipe Rodriguez", email="jfpr1237@gmail.com" },
