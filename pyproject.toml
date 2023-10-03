@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-ex"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
     { name="João Felipe Rodriguez", email="jfpr1237@gmail.com" },
 ]
@@ -21,4 +21,4 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/VLN37/django-x"
+repository = "https://github.com/VLN37/django-ex"

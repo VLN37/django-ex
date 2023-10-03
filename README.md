@@ -65,13 +65,13 @@ it is also possible to define it in a base template:
 
 ```py
 # download the package
-python3 -m pip install django-x
+python3 -m pip install django-ex
 
 # in your projects settings.py include at the end:
 ...
 MIDDLEWARE = [
     ...
-    "django_x.middlewares.http.ProtocolExtensionMiddleware",
+    "django_ex.middleware.http.ProtocolExtensionMiddleware",
 ]
 ...
 ```
