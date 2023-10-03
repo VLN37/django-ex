@@ -39,6 +39,8 @@ def ProtocolExtensionMiddleware(get_response):
             if method_name in ["PUT", "PATCH", "DELETE"]:
                 setattr(request, method_name, _load_data_and_files(request))
             if method_name in ["POST", "PUT", "PATCH", "DELETE"]:
+                # this expensive action is here only for possible future compatibility
+                # using standalone Django < 4.1 should not trigger this condition
                 if hasattr(request, "data"):
                     new_data = request.data.copy().update(getattr(request, method_name))
                     request.data = new_data
