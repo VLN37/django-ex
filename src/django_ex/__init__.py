@@ -1,1 +1,1 @@
-from middlewares import ProtocolExtensionMiddleware
+from .middleware import ProtocolExtensionMiddleware
