@@ -8,7 +8,6 @@ from django.conf import settings as django_settings
 from django.http import HttpRequest, QueryDict
 from django.http.multipartparser import MultiPartParserError, TooManyFilesSent
 from django.utils.decorators import sync_and_async_middleware
-from django.core.handlers.wsgi import get_bytes_from_wsgi
 
 logger = logging.getLogger("django_x")
 
@@ -32,7 +31,7 @@ def _load_data_and_files(request: HttpRequest):
         logger.info("Unsupported request content_type. You have to parse body by hand")
         DATA = QueryDict(encoding=django_settings.DEFAULT_CHARSET)
     if request.method == "GET":
-        raw_query_string = get_bytes_from_wsgi(request.environ, "QUERY_STRING", "")
+        raw_query_string = request.META.get("QUERY_STRING", "")
         DATA = QueryDict(raw_query_string, encoding=request._encoding)
     return DATA
 
